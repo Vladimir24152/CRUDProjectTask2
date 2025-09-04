@@ -13,7 +13,7 @@ public class AppInit implements WebApplicationInitializer {
     @Override
     public void onStartup(ServletContext servletContext) {
         AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
-        context.register(WebConfig.class);
+        context.register(WebConfig.class,DatabaseConfig.class);
         servletContext.addListener(new ContextLoaderListener(context));
 
         ServletRegistration.Dynamic servlet = servletContext.addServlet(DISPATCHER, new DispatcherServlet(context));
