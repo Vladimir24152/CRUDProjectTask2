@@ -11,7 +11,6 @@ import java.util.List;
 @Service
 public class UserServiceImp implements UserService{
 
-    @Autowired
     private UserDao userDao;
 
     @Autowired
@@ -37,7 +36,7 @@ public class UserServiceImp implements UserService{
         userDao.updateUser(newUser);
     }
 
-    @Transactional
+    @Transactional(readOnly = true)
     @Override
     public User getUserById(long id) {
         return userDao.getUserById(id);
