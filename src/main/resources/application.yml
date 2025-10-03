@@ -1,0 +1,30 @@
+db:
+  username: postgres
+  password: vova152
+  driver: org.postgresql.Driver
+  url: jdbc:postgresql://localhost:5432/postgres
+  hosts: localhost,127.0.0.1
+
+
+hibernate:
+  show_sql: true
+  hbm2ddl.auto: update
+  dialect: org.hibernate.dialect.PostgreSQLDialect
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: vova152
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    properties.hibernate:
+      show_sql: true
+      hbm2ddl.auto: update
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+
+logging:
+  level:
+    root: INFO
+    org.example.database.pool: INFO
